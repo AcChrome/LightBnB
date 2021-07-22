@@ -39,7 +39,7 @@ INSERT INTO properties (
     'W415M2',
     true
   ),
-  (
+    (
     3,
     'Drive buy',
     'description',
@@ -73,32 +73,32 @@ INSERT INTO properties (
     'V8Q5U3',
     true
   ),
-  (
+    (
     5,
-    'Gang gvng'
+    'Gvng gang',
     'description',
-    'http://imgur.com/gang_gvng/thumb.jpeg',
-    'http://imgur.com/gang_gvng/cover.jpeg',
-    1569.89,
+    'http://imgur.com/gvng_gang/thumb.jpeg',
+    'http://imgur.com/gvng_gang/cover.jpeg',
+    1530.68,
     3,
     5,
     3,
     'Canada',
-    '369 Gvng Street',
-    'Calgary',
-    'Alberta',
-    'E4Q7H1',
+    '420 Gvng Drive',
+    'Vancouver',
+    'British Columbia',
+    'V6Y5U3',
     true
   );
-
-  INSERT INTO reservations (start_date, end_date, property_id, guest_id,)
+  
+  INSERT INTO reservations (start_date, end_date, property_id, guest_id)
   VALUES ('2019-11-12', '2019-11-16', 1, 3),
   ('2020-01-01', '2020-01-02', 2, 2),
   ('2021-03-04','2021-03-07', 3, 1),
-  ('2021-05-16','2021-05-20', 4, 3)
+  ('2021-05-16','2021-05-20', 4, 3);
 
   INSERT INTO property_reviews (guest_id, property_id, reservation_id, rating, message)
-  VALUES (3, 1, 1, 'message'),
-  (2, 2, 2, 'message'),
-  (1, 3, 3, 'message'),
-  (3, 4, 4, 'message');
+  VALUES (3, 1, 1, '4', 'message'),
+  (2, 2, 2, '3', 'message'),
+  (1, 3, 3, '5', 'message'),
+  (3, 4, 4, '5', 'message');
