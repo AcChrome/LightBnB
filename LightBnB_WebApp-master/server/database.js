@@ -6,7 +6,7 @@ const pool = new Pool({
   user: "vagrant",
   password: "123",
   host: "localhost",
-  database: "lightbnb",
+  database: "lightbnb"
 });
 
 /// Users
@@ -66,12 +66,7 @@ exports.getUserWithId = getUserWithId;
  * @param {{name: string, password: string, email: string}} user
  * @return {Promise<{}>} A promise to the user.
  */
-// const addUser =  function(user) {
-//   const userId = Object.keys(users).length + 1;
-//   user.id = userId;
-//   users[userId] = user;
-//   return Promise.resolve(user);
-// }
+
 const addUser = function (user) {
   const data = [user.name, user.email, user.password];
   return pool
@@ -98,7 +93,15 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function (guest_id, limit = 10) {
-  return getAllProperties(null, 2);
+  const data = [guest_id, limit];
+  pool.query(`
+  SELECT *
+  FROM reservations
+  WHERE guest_id = $1
+  LIMIT $2`, data)
+  .then(res => {
+    console.log(res.rows);
+  });
 };
 exports.getAllReservations = getAllReservations;
 
